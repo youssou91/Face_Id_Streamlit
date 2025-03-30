@@ -6,8 +6,8 @@ import requests
 
 load_dotenv()
 
-GOOGLE_CLIENT_ID = os.getenv('GOOGLE_CLIENT_ID')
-GOOGLE_CLIENT_SECRET = os.getenv('GOOGLE_CLIENT_SECRET')
+GOOGLE_CLIENT_ID = os.getenv('1078916682099-pnqp77d6jbnb0ut8i0u6efprcmr9am6i.apps.googleusercontent.com')
+GOOGLE_CLIENT_SECRET = os.getenv('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')
 REDIRECT_URI = 'http://localhost:8501/callback'
 
 def init_google_auth():
