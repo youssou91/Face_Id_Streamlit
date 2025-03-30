@@ -33,19 +33,6 @@ def init_db():
         conn = get_db_connection()
         cursor = conn.cursor()
         
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS users (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                username VARCHAR(255) UNIQUE NOT NULL,
-                email VARCHAR(255) UNIQUE NOT NULL,
-                password_hash VARCHAR(255) NOT NULL,
-                face_encoding LONGBLOB,
-                google_id VARCHAR(255) UNIQUE,
-                facebook_id VARCHAR(255) UNIQUE,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
-        
         conn.commit()
     except Error as e:
         print(f"Error: {e}")

@@ -88,8 +88,8 @@ menu_options = [
 choice = st.sidebar.selectbox(
     "Menu",
     options=menu_options,
-    key="main_navigation",  # Clé unique et constante
-    index=0  # Sélectionne le premier élément par défaut
+    key="main_navigation",  
+    index=0 
 )
 # Section Inscription
 if choice == "Inscription":
