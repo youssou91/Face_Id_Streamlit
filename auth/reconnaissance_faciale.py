@@ -3,19 +3,7 @@ import numpy as np
 import cv2
 
 def process_face_image(image):
-    """
-    Traite une image pour en extraire les caractéristiques du visage.
     
-    Args:
-        image: Image numpy array en format RGB
-        
-    Returns:
-        dict: {
-            'valid': bool,
-            'message': str,
-            'encoding': numpy array (si valid=True)
-        }
-    """
     try:
         # Détecter les visages dans l'image
         face_locations = face_recognition.face_locations(image)
@@ -69,17 +57,7 @@ def process_face_image(image):
         }
 
 def verify_face(face_encoding, stored_encoding, tolerance=0.6):
-    """
-    Compare deux encodages de visage pour vérifier s'il s'agit de la même personne.
     
-    Args:
-        face_encoding: Encodage du visage à vérifier
-        stored_encoding: Encodage du visage stocké
-        tolerance: Seuil de tolérance pour la comparaison (0.6 par défaut)
-        
-    Returns:
-        bool: True si les visages correspondent, False sinon
-    """
     try:
         # Convertir les encodages en tableaux numpy si nécessaire
         if isinstance(stored_encoding, bytes):
@@ -113,16 +91,6 @@ def verify_face(face_encoding, stored_encoding, tolerance=0.6):
 def extract_face_features(image):
     """
     Extrait les points caractéristiques du visage pour une visualisation.
-    
-    Args:
-        image: Image numpy array en format RGB
-        
-    Returns:
-        dict: {
-            'valid': bool,
-            'landmarks': dict des points caractéristiques (si valid=True),
-            'face_location': tuple de la position du visage (si valid=True)
-        }
     """
     try:
         # Détecter le visage
@@ -158,13 +126,6 @@ def extract_face_features(image):
 def draw_face_landmarks(image, landmarks):
     """
     Dessine les points caractéristiques sur une image.
-    
-    Args:
-        image: Image numpy array
-        landmarks: Dictionnaire des points caractéristiques
-        
-    Returns:
-        Image numpy array avec les points caractéristiques dessinés
     """
     img_copy = image.copy()
     
