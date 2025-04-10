@@ -248,7 +248,7 @@ def main():
                         result_data.append({"Fichier": filename, "Distance": f"{dist_val:.2f}"})
                         with cols[i % 3]:
                             img_disp = Image.open(image_paths[idx])
-                            st.image(img_disp, use_column_width=True)
+                            st.image(img_disp, use_container_width=True)
                             st.caption(f"Distance: {dist_val:.2f}\nFichier: {filename}")
                     except Exception as e:
                         st.error(f"Erreur d'affichage: {str(e)}")
